@@ -2,10 +2,12 @@ const mongoose = require('mongoose')
 
 const logsSchema = new mongoose.Schema({
     title: {
-        type: String
+        type: String,
+        require: true
     },
     entry: {
-        type: String
+        type: String,
+        require: true
     },
     shipIsBroken: {
         type: Boolean,
@@ -14,3 +16,7 @@ const logsSchema = new mongoose.Schema({
 },
 {timestamps: true}
 )
+
+
+const Logs = mongoose.model("Logs", logsSchema)
+module.exports = Logs
